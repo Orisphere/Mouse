@@ -12,7 +12,7 @@ class Robot(object):
         self.location = [0, 0]
         self.heading = 'up'
         self.maze_dim = maze_dim
-	self.maze = [[None]*maze_dim]*maze_dim]
+	self.maze = [[None]*maze_dim]*maze_dim
 	
     def next_move(self, sensors):
         '''
@@ -51,5 +51,40 @@ class Robot(object):
 	else:
 		rotation = 0
 		movement = -1
-	
+	if self.heading == 'up':
+		if rotation == 90 and movement >= 0:
+			h = 'right'
+		elif rotation == -90 and movement >= 0:
+			h = 'left'
+		elif movement >= 0:
+			h = 'up'
+		elif movement < 0:
+			h = 'down'
+	elif self.heading == 'down':
+		if rotation == 90 and movement >= 0:
+			h = 'left'
+		elif rotation == -90 and movement >= 0:
+			h = 'right'
+		elif movement >= 0:
+			h = 'down'
+		elif movement < 0:
+			h = 'up'
+	elif self.heading == 'left':
+		if rotation == 90 and movement >= 0:
+			h = 'up'
+		elif rotation == -90 and movement >= 0:
+			h = 'down'
+		elif movement >= 0:
+			h = 'left'
+		elif movement < 0:
+			h = 'right'
+	elif self.heading == 'right':
+		if rotation == 90 and movement >= 0:
+			h = 'down'
+		elif rotation == -90 and movement >= 0:
+			h = 'up'
+		elif movement >= 0:
+			h = 'right'
+		elif movement < 0:
+			h = 'left'
         return rotation, movement
