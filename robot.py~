@@ -1,5 +1,18 @@
 import numpy as np
+class Node:
+	def __init__(self, value, location):
+		self.location = location
+		self.visited = 1
 
+	def get_neighbors:
+		pass
+
+	def mark_visited:
+		pass
+
+	def is_visited:
+		pass
+	
 class Robot(object):
     def __init__(self, maze_dim):
         '''
@@ -12,7 +25,7 @@ class Robot(object):
         self.location = [0, 0]
         self.heading = 'up'
         self.maze_dim = maze_dim
-	self.maze = [[None]*maze_dim]*maze_dim
+	self.maze = {}
 	
     def next_move(self, sensors):
         '''
