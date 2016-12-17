@@ -52,4 +52,42 @@ class Robot(object):
 		rotation = 0
 		movement = -1
 	
-        return rotation, movement
+	if self.heading == 'up':
+		if rotation == 90 and movement >= 0:
+			h = 'right'
+		elif rotation == -90 and movement >= 0:
+			h = 'left'
+		elif movement >= 0:
+			h = 'up'
+		elif movement < 0:
+			h = 'down'
+	elif self.heading == 'down':
+		if rotation == 90 and movement >= 0:
+			h = 'left'
+		elif rotation == -90 and movement >= 0:
+			h = 'right'
+		elif movement >= 0:
+			h = 'down'
+		elif movement < 0:
+			h = 'up'
+	elif self.heading == 'left':
+		if rotation == 90 and movement >= 0:
+			h = 'up'
+		elif rotation == -90 and movement >= 0:
+			h = 'down'
+		elif movement >= 0:
+			h = 'left'
+		elif movement < 0:
+			h = 'right'
+	elif self.heading == 'right':
+		if rotation == 90 and movement >= 0:
+			h = 'down'
+		elif rotation == -90 and movement >= 0:
+			h = 'up'
+		elif movement >= 0:
+			h = 'right'
+		elif movement < 0:
+			h = 'left'
+        self.heading = h
+
+	return rotation, movement

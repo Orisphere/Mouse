@@ -1,5 +1,17 @@
 import numpy as np
+class Node:
+	def __init__(self, location):
+		self.location = location
+		self.visited = 1
 
+	def get_neighbors:
+		pass
+
+	def mark_visited:
+		pass
+	def is_visited:
+		pass
+	
 class Robot(object):
     def __init__(self, maze_dim):
         '''
@@ -51,6 +63,7 @@ class Robot(object):
 	else:
 		rotation = 0
 		movement = -1
+	
 	if self.heading == 'up':
 		if rotation == 90 and movement >= 0:
 			h = 'right'
@@ -87,4 +100,6 @@ class Robot(object):
 			h = 'right'
 		elif movement < 0:
 			h = 'left'
-        return rotation, movement
+        self.heading = h
+
+	return rotation, movement
